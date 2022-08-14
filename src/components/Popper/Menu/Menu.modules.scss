@@ -2,8 +2,6 @@
     width: 224px;
     height: 142px;
     padding-bottom: 8px;
-    position: absolute;
-    right: -15px;
     & .menu-item {
         width: 100%;
         margin-left: 0;
@@ -12,6 +10,9 @@
         line-height: 1.8rem;
         font-weight: 500;
         padding: 11px 16px;
+        &.separate {
+            border-top: 1px solid rgba(22, 24, 35, 0.12);
+        }
         &:hover {
             background: rgba(22, 24, 35, 0.03);
         }
