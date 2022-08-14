@@ -28,6 +28,8 @@ import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import MenuItem from '~/components/Popper/Menu/MenuItem';
+import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
+import Image from '~/components/Image';
 
 const MENU_ITEMS = [
     {
@@ -145,7 +147,18 @@ function Header() {
                         <>
                             <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                                 <button className={cx('actions-btn')}>
-                                    <FontAwesomeIcon icon={faCloudArrowUp} />
+                                    <UploadIcon className={cx('icon')} />
+                                </button>
+                            </Tippy>
+                            <Tippy delay={[0, 50]} content="Message" placement="bottom">
+                                <button className={cx('actions-btn')}>
+                                    <MessageIcon className={cx('icon')} />
+                                </button>
+                            </Tippy>
+                            <Tippy delay={[0, 50]} content="Inbox" placement="bottom">
+                                <button className={cx('actions-btn')}>
+                                    <InboxIcon />
+                                    <span className={cx('badge')}>12</span>
                                 </button>
                             </Tippy>
                         </>
@@ -165,10 +178,11 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
-                                src="https://p16-sign-sg.tiktokcdn.com/tos-alisg-avt-0068/a37a80efccf8be89b832bed494918d6f~c5_300x300.webp?x-expires=1660467600&x-signature=TBt7J4wcn9UAro8JIhKZ1%2BmShx4%3D"
+                                src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/847d9c58b52aa997e55a897da0b91868.jpeg?biz_tag=tiktok_user.user_cover&x-expires=1660564800&x-signature=CQO%2FGpKcU2HCKMQkxRKwOYrc2xs%3D"
                                 alt="Hoa"
+                                // fallBack="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8e12e82677392cebe2c7efeb3fdbdffe~c5_100x100.jpeg?biz_tag=tiktok_user.user_cover&x-expires=1660564800&x-signature=33OamvICrT1ml38FVNZVc7SqO48%3D"
                             />
                         ) : (
                             <button className={cx('more-btn')}>

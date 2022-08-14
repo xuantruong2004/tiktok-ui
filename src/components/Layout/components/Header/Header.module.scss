@@ -85,6 +85,9 @@
     font-size: 2rem;
     color: rgba(22, 24, 35, 0.34);
 
+    display: flex;
+    align-items: center;
+
     &:hover {
         background: rgba(22, 24, 35, 0.03);
         cursor: pointer;
@@ -104,11 +107,26 @@
     align-items: center;
 }
 .actions-btn {
+    position: relative;
     font-size: 2.2rem;
     background-color: transparent;
     color: #161823;
     padding: 4px 12px;
     cursor: pointer;
+
+    .badge {
+        position: absolute;
+        left: 30px;
+        top: -5px;
+        background-color: var(--primary);
+        color: #fff;
+        font-size: 1.6rem;
+        border-radius: 40%;
+    }
+
+    .icon {
+        top: 3px;
+    }
 }
 .more-btn {
     width: 20px;
