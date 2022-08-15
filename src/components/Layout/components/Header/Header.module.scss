@@ -20,6 +20,7 @@
     // background-color: #ccc;
 }
 .logo {
+    display: flex;
 }
 
 .custom-login {
@@ -34,6 +35,7 @@
 }
 .actions-btn {
     position: relative;
+    display: flex;
     font-size: 2.2rem;
     background-color: transparent;
     color: #161823;

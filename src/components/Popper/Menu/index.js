@@ -9,7 +9,7 @@ import MenuItem from './MenuItem';
 
 const cx = classNames.bind(styles);
 const defaultFn = () => {};
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], onChange = defaultFn, hideOnClick = true }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
 
@@ -34,6 +34,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
     return (
         <Tippy
             // visible
+            hideOnClick={hideOnClick}
             interactive
             delay={[0, 600]}
             offset={[12, 8]}

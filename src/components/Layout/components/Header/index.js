@@ -15,6 +15,7 @@ import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import 'tippy.js/dist/tippy.css';
 
+import routesConfig from '~/config/routes';
 import images from '~/assets/images';
 import Button from '~/components/Button';
 import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
@@ -95,7 +96,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={'/'} className={cx('logo')}>
+                <Link to={routesConfig.home} className={cx('logo')}>
                     <img src={images.logo} alt="TikTok" />
                 </Link>
 
@@ -136,13 +137,17 @@ function Header() {
                             </Button>
                         </>
                     )}
-                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+                    <Menu
+                        hideOnClick={false}
+                        items={currentUser ? userMenu : MENU_ITEMS}
+                        onChange={handleMenuChange}
+                    >
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/847d9c58b52aa997e55a897da0b91868.jpeg?biz_tag=tiktok_user.user_cover&x-expires=1660564800&x-signature=CQO%2FGpKcU2HCKMQkxRKwOYrc2xs%3D"
                                 alt="Hoa"
-                                // fallBack="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/8e12e82677392cebe2c7efeb3fdbdffe~c5_100x100.jpeg?biz_tag=tiktok_user.user_cover&x-expires=1660564800&x-signature=33OamvICrT1ml38FVNZVc7SqO48%3D"
+                                fallBack="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ec498fba185e8ef27410520bc20e324a~c5_100x100.jpeg?biz_tag=tiktok_user.user_cover&x-expires=1660658400&x-signature=cRN3wr8UY0kAUcXkWu%2Fcu9l5TQA%3D"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
