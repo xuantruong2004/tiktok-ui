@@ -22,81 +22,6 @@
 .logo {
 }
 
-.search,
-.search-result {
-    width: 361px;
-}
-.search {
-    position: relative;
-    height: var(--search-height);
-    background: rgba(22, 24, 35, 0.06);
-    display: flex;
-    align-items: center;
-    padding-left: 16px;
-    border-radius: var(--search-border-radius);
-    border: 1.5px solid transparent;
-
-    input {
-        height: 100%;
-        flex: 1;
-        font-size: 1.6rem;
-        color: var(--black);
-        caret-color: var(--primary);
-        background-color: transparent;
-    }
-    input:not(:placeholder-shown) ~ .search-btn {
-        color: var(--text-color);
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: var(--search-top-spacer);
-        right: var(--search-button-width);
-        height: calc(var(--search-height) - (var(--search-top-spacer) * 2));
-        width: 1px;
-        background-color: rgba(22, 24, 35, 0.12);
-    }
-
-    &:focus-within {
-        border-color: rgba(22, 24, 35, 0.2);
-    }
-}
-.search-title {
-    height: 30px;
-    padding: 5px 12px;
-    font-size: 1.4rem;
-    line-height: 20px;
-    font-weight: 600;
-    color: rgba(22, 24, 35, 0.5);
-}
-.clear,
-.loading {
-    position: absolute;
-    right: calc(var(--search-button-width) + 16px);
-    color: rgba(22, 24, 35, 0.34);
-}
-
-.search-btn {
-    width: var(--search-button-width);
-    height: 100%;
-    border-top-right-radius: var(--search-border-radius);
-    border-bottom-right-radius: var(--search-border-radius);
-    font-size: 2rem;
-    color: rgba(22, 24, 35, 0.34);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &:hover {
-        background: rgba(22, 24, 35, 0.03);
-        cursor: pointer;
-    }
-    &:active {
-        background-color: rgba(22, 24, 35, 0.06);
-    }
-}
 .custom-login {
     font-size: 1.4rem;
     color: rgba(22, 24, 35, 0.75);
@@ -118,11 +43,14 @@
     .badge {
         position: absolute;
         left: 30px;
-        top: -5px;
+        top: -2px;
         background-color: var(--primary);
         color: #fff;
-        font-size: 1.6rem;
+        width: 20px;
+        height: 16px;
+        font-size: 1.2rem;
         border-radius: 40%;
+        text-align: center;
     }
 
     .icon {
