@@ -12,6 +12,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react';
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 import 'tippy.js/dist/tippy.css';
 
 import images from '~/assets/images';
@@ -94,9 +95,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Link to={'/'} className={cx('logo')}>
                     <img src={images.logo} alt="TikTok" />
-                </div>
+                </Link>
 
                 {/* Search */}
                 <Search />
