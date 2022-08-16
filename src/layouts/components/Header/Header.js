@@ -68,7 +68,7 @@ function Header() {
                 break;
         }
     };
-    const currentUser = true;
+    const currentUser = false;
     const userMenu = [
         {
             icon: <FontAwesomeIcon icon={faUser} />,
@@ -132,7 +132,7 @@ function Header() {
                             >
                                 Upload
                             </Button>
-                            <Button primary onClick={() => console.log('primary')}>
+                            <Button to={'/'} primary onClick={() => console.log('primary')}>
                                 Log in
                             </Button>
                         </>

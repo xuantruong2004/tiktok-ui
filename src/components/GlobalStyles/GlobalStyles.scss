@@ -69,15 +69,16 @@ html *::-webkit-scrollbar-track {
     font-weight: 700;
 }
 
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
 input,
 button,
 [tabindex] {
     outline: none;
     border: none;
-}
-a[href] {
-    color: var(--text-color);
-    text-decoration: none;
 }
 body {
     .tippy-box {
