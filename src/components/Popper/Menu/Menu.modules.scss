@@ -30,6 +30,9 @@
 .menu-popper {
     padding-bottom: 8px;
 }
+.listItem {
+    overflow-y: auto;
+}
 
 // menu-item
 
@@ -38,8 +41,7 @@
     position: relative;
     display: flex;
     height: 50px;
-    font-weight: 400;
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-top: -8px;
 }
 .back-btn {

@@ -33,7 +33,6 @@ function Menu({ children, items = [], onChange = defaultFn, hideOnClick = true }
     };
     return (
         <Tippy
-            // visible
             hideOnClick={hideOnClick}
             interactive
             delay={[0, 600]}
@@ -50,7 +49,7 @@ function Menu({ children, items = [], onChange = defaultFn, hideOnClick = true }
                                 }}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('listItem')}>{renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}
