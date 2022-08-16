@@ -5,7 +5,7 @@ const httpRequest = axios.create({
     timeout: 1000,
     headers: { 'X-Custom-Header': 'foobar' },
 });
-console.log(process.env.REACT_APP_BASE_URL);
+console.log(process.env);
 export const get = async (path, options = {}) => {
     const response = await httpRequest.get(path, options);
     return response.data;
