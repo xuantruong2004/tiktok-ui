@@ -10,6 +10,9 @@ import {
     UserGroupIconActive,
     LiveIconActive,
 } from '~/components/Icons';
+import SuggestedAccounts from '~/components/SuggestedAccounts';
+import Discover from '~/components/Discover';
+import Footer from '~/components/Footer';
 
 const cx = classNames.bind(styles);
 function Sidebar() {
@@ -19,7 +22,7 @@ function Sidebar() {
                 <MenuItem
                     icon={<HomeIcon />}
                     activeIcon={<HomeIconActive />}
-                    title="For you"
+                    title="For You"
                     to={config.routes.home}
                 />
                 <MenuItem
@@ -35,6 +38,10 @@ function Sidebar() {
                     to={config.routes.live}
                 />
             </Menu>
+            <SuggestedAccounts label="Suggested accounts" />
+            <SuggestedAccounts label="Following accounts" />
+            <Discover label="Discover" />
+            <Footer />
         </aside>
     );
 }
