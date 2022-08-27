@@ -8,12 +8,13 @@ import styles from './SuggestedAccounts.module.scss';
 
 const cx = classNames.bind(styles);
 
-function AccountItem() {
+function AccountItem({ user }) {
+    console.log(user);
     const renderPreview = (props) => {
         return (
             <div className={cx('preview')} tabIndex="-1" {...props}>
                 <PopperWrapper>
-                    <AccountPreview />
+                    <AccountPreview user={user} />
                 </PopperWrapper>
             </div>
         );
@@ -27,17 +28,17 @@ function AccountItem() {
             render={renderPreview}
         >
             <div className={cx('account-item')} onClick={() => console.log('hello')}>
-                <img
-                    className={cx('avatar')}
-                    src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-aiso/460b79b4f9a3faea06be6651728c0690~c5_100x100.jpeg?biz_tag=tiktok_user.user_cover&x-expires=1661043600&x-signature=v9nueFIBHHUITnET18b9X0X5nx4%3D"
-                    alt=""
-                />
+                <img className={cx('avatar')} src={user.avatar} alt={user.nickname} />
                 <div className={cx('info')}>
                     <p className={cx('nickname')}>
-                        <strong>hangdam@2004</strong>
-                        <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
+                        <strong>{user.nickname}</strong>
+                        {user.tick && (
+                            <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
+                        )}
                     </p>
-                    <p className={cx('full-name')}>Hang Dam</p>
+                    <p className={cx('full-name')}>
+                        {user.first_name} {user.last_name}
+                    </p>
                 </div>
             </div>
         </Tippy>

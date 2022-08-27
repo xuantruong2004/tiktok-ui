@@ -13,9 +13,24 @@ import {
 import SuggestedAccounts from '~/components/SuggestedAccounts';
 import Discover from '~/components/Discover';
 import Footer from '~/components/Footer';
+import { useEffect, useState } from 'react';
+import * as userService from '~/services/userService';
 
 const cx = classNames.bind(styles);
 function Sidebar() {
+    const [suggestedUser, setSuggestedUser] = useState([]);
+    const [perPage, setPerPage] = useState(5);
+    useEffect(() => {
+        userService
+            .getSuggested({ page: 1, perPage: perPage })
+            .then((data) => {
+                setSuggestedUser(data);
+            })
+            .catch((error) => console.log('Failed to Fetch Suggested ', error));
+    }, [perPage]);
+    const handleSeeMore = () => {
+        setPerPage(perPage + 5);
+    };
     return (
         <aside className={cx('wrapper')}>
             <Menu>
@@ -38,7 +53,11 @@ function Sidebar() {
                     to={config.routes.live}
                 />
             </Menu>
-            <SuggestedAccounts label="Suggested accounts" />
+            <SuggestedAccounts
+                data={suggestedUser}
+                label="Suggested accounts"
+                onChange={handleSeeMore}
+            />
             <SuggestedAccounts label="Following accounts" />
             <Discover label="Discover" />
             <Footer />
