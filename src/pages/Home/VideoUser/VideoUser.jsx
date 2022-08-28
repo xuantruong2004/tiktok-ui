@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import Button from '~/components/Button';
+import Image from '~/components/Image';
 import styles from './VideoUser.modules.scss';
 
 const cx = classNames.bind(styles);
@@ -13,15 +14,8 @@ VideoUser.propTypes = {
 function VideoUser({ data }) {
     return (
         <div className={cx('wrapper-video')}>
-            <div>
-                {' '}
-                <img
-                    className={cx('avatar-video')}
-                    src={data.avatar}
-                    alt={data.nickname}
-                    width="100%"
-                />
-            </div>
+            <Image className={cx('avatar-video')} src={data.avatar} alt={data.nickname} />
+
             <div className={cx('content-video')}>
                 <div className={cx('info-video')}>
                     <h4 className={cx('nickname')}>
