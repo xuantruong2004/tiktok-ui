@@ -17,7 +17,7 @@ function SuggestedAccounts({ label, data = [], onChange }) {
             ))}
 
             <p className={cx('more-btn')} onClick={() => onChange()}>
-                See all
+                See more
             </p>
         </div>
     );

@@ -58,7 +58,11 @@ function Sidebar() {
                 label="Suggested accounts"
                 onChange={handleSeeMore}
             />
-            <SuggestedAccounts label="Following accounts" />
+            <SuggestedAccounts
+                data={suggestedUser}
+                label="Following accounts"
+                onChange={handleSeeMore}
+            />
             <Discover label="Discover" />
             <Footer />
         </aside>

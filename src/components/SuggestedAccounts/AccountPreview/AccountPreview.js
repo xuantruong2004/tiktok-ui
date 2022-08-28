@@ -1,19 +1,28 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
-import styles from './AccountPreview.module.scss';
-import Button from '~/components/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import classNames from 'classnames/bind';
+import { useState } from 'react';
+import images from '~/assets/images/index';
+import Button from '~/components/Button';
+import styles from './AccountPreview.module.scss';
 
 const cx = classNames.bind(styles);
 AccountPreview.propTypes = {};
 
 function AccountPreview({ user }) {
+    const [srcImg, setSrcImg] = useState('');
+    const handleError = () => {
+        setSrcImg(images.noImage);
+    };
     return (
         <div className={cx('wrapper')}>
             <header className={cx('header')}>
-                <img className={cx('avatar')} src={user.avatar} alt={user.name} />
+                <img
+                    className={cx('avatar')}
+                    src={srcImg || user.avatar}
+                    alt={user.nickname}
+                    onError={handleError}
+                />
 
                 <Button primary small>
                     {' '}

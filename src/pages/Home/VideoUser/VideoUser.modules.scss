@@ -1,0 +1,30 @@
+.wrapper-video {
+    display: flex;
+    padding: 20px 0;
+    border-bottom: solid 1px #ccc;
+}
+.avatar-video {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+.content-video {
+    margin-left: 12px;
+}
+.check {
+    font-size: 1.4rem;
+    margin: 0 4px 2px;
+    color: #20d5ec;
+}
+.nickname {
+    font-size: 1.8rem;
+}
+.full-name {
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin-left: 5px;
+}
+.video-play {
+    border-radius: 5px;
+    width: 282px;
+}
