@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 
 function Home() {
     const [suggestedUser, setSuggestedUser] = useState([]);
-    const [perPage, setPerPage] = useState(10);
+    const [perPage, setPerPage] = useState(20);
     useEffect(() => {
         userService
             .getSuggested({ page: 1, perPage: perPage })

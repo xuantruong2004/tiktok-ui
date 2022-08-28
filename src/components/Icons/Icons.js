@@ -194,3 +194,15 @@ export const MusicIcon = ({ width = '1.6rem', height = '1.6rem', className }) =>
         ></path>
     </svg>
 );
+
+// export const Favorite = () => (
+//     <svg
+//         viewBox="0 0 24 24"
+//         xmlns="http://www.w3.org/2000/svg"
+//         fill="currentColor"
+//         width="24"
+//         height="24"
+//     >
+//         <use xlink:href="#svg-heart-fill"></use>
+//     </svg>
+// );

@@ -10,6 +10,11 @@
 }
 .content-video {
     margin-left: 12px;
+    width: 100%;
+    position: relative;
+}
+.info-video {
+    margin-right: 114px;
 }
 .check {
     font-size: 1.4rem;
@@ -27,4 +32,22 @@
 .video-play {
     border-radius: 5px;
     width: 282px;
+    min-height: 500px;
+}
+
+.box-video {
+    display: flex;
+    margin-top: 16px;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-left: 20px;
+}
+
+.btn-video {
+    position: absolute;
+    top: 0;
+    right: 10px;
 }
