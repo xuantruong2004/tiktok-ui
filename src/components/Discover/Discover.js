@@ -18,7 +18,7 @@ function Discover({ label }) {
                     title="Thương một người khó lăm"
                 />
                 <Hashtag to={config.routes.profile} icon={<MusicIcon />} title="Lời hứa sau cùng" />
-                <Hashtag to={config.routes.profile} icon={<HashtagIcon />} title="huyennha" />
+                <Hashtag to={config.routes.profile} icon={<HashtagIcon />} title="KyDuyen" />
                 <Hashtag to={config.routes.profile} icon={<HashtagIcon />} title="baodien" />
                 <Hashtag to={config.routes.profile} icon={<HashtagIcon />} title="quynhnhu" />
                 <Hashtag
@@ -26,6 +26,7 @@ function Discover({ label }) {
                     icon={<MusicIcon />}
                     title="Ngôi Sao Cô Đơn - Jack"
                 />
+                <Hashtag to={config.routes.profile} icon={<MusicIcon />} title="Phao hong REMIX" />
             </div>
         </div>
     );

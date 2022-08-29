@@ -19,7 +19,7 @@ function AccountItem({ user }) {
         return (
             <div className={cx('preview')} tabIndex="-1" {...props}>
                 <PopperWrapper>
-                    <AccountPreview user={user} />
+                    <AccountPreview customBtn="primary" user={user} />
                 </PopperWrapper>
             </div>
         );

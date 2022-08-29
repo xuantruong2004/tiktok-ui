@@ -6,7 +6,9 @@
 .avatar-video {
     width: 56px;
     height: 56px;
-    border-radius: 50%;
+    object-fit: cover;
+    border-radius: 100%;
+    cursor: pointer;
 }
 .content-video {
     margin-left: 12px;
@@ -23,6 +25,12 @@
 }
 .nickname {
     font-size: 1.8rem;
+    &:hover {
+        cursor: pointer;
+        & strong {
+            text-decoration: underline;
+        }
+    }
 }
 .full-name {
     font-weight: 400;
@@ -45,9 +53,31 @@
     flex-direction: column-reverse;
     margin-left: 20px;
 }
+.box-icon {
+    & p {
+        text-align: center;
+    }
+}
 
 .btn-video {
     position: absolute;
     top: 0;
     right: 10px;
+}
+
+.icon-video {
+    width: 48px;
+    height: 48px;
+    background-color: #1618230f;
+    margin: 8px 0 4px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    color: black;
+    cursor: pointer;
+    &.active {
+        color: red;
+    }
 }

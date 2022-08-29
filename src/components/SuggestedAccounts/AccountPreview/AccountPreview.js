@@ -9,7 +9,7 @@ import styles from './AccountPreview.module.scss';
 const cx = classNames.bind(styles);
 AccountPreview.propTypes = {};
 
-function AccountPreview({ user }) {
+function AccountPreview({ user, customBtn }) {
     const [srcImg, setSrcImg] = useState('');
     const handleError = () => {
         setSrcImg(images.noImage);
@@ -24,7 +24,7 @@ function AccountPreview({ user }) {
                     onError={handleError}
                 />
 
-                <Button primary small>
+                <Button primary={customBtn === 'primary'} outline={customBtn === 'outline'} small>
                     {' '}
                     Follow
                 </Button>
