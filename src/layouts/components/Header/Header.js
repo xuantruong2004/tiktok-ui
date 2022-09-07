@@ -23,6 +23,7 @@ import Image from '~/components/Image';
 import Menu from '~/components/Popper/Menu';
 import Search from '../Search';
 import styles from './Header.module.scss';
+import { useState } from 'react';
 
 const MENU_ITEMS = [
     {
@@ -58,17 +59,19 @@ const cx = classNames.bind(styles);
 
 function Header() {
     const handleMenuChange = (menuItem) => {
-        switch (menuItem.type) {
+        switch (menuItem.title) {
             case 'language':
                 // handle change language
                 console.log(menuItem);
                 break;
-
+            case 'Log out':
+                setCurrentUser(false);
+                break;
             default:
                 break;
         }
     };
-    const currentUser = true;
+    const [currentUser, setCurrentUser] = useState(false);
     const userMenu = [
         {
             icon: <FontAwesomeIcon icon={faUser} />,
@@ -89,7 +92,7 @@ function Header() {
         {
             icon: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
             title: 'Log out',
-            to: '/feedback',
+            // to: '/login',
             separate: true,
         },
     ];
@@ -132,7 +135,7 @@ function Header() {
                             >
                                 Upload
                             </Button>
-                            <Button primary onClick={() => console.log('primary')}>
+                            <Button primary onClick={() => setCurrentUser(true)}>
                                 Log in
                             </Button>
                         </>
